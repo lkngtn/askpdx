@@ -1,0 +1,4 @@
+scrapes/
+faiss_store.pkl
+docs.pkl
+metadatas.pkl

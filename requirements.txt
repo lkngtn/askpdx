@@ -1,0 +1,8 @@
+beautifulsoup4
+langchain
+numpy
+openai
+tiktoken
+tqdm
+xmltodict
+

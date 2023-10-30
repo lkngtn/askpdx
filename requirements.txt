@@ -6,5 +6,4 @@ tiktoken
 tqdm
 xmltodict
 faiss-cpu
-pickle
 

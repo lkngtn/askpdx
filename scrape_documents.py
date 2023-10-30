@@ -11,7 +11,8 @@ def extract_text_from(url):
     try:
         html = requests.get(url).text
         soup = BeautifulSoup(html, features="html.parser")
-        text = soup.get_text()
+        main_content = soup.find('main')
+        text = main_content.get_text()
 
         lines = (line.strip() for line in text.splitlines())
         return '\n'.join(line for line in lines if line)
@@ -42,7 +43,7 @@ if __name__ == '__main__':
             pages.append({'text': extract_text_from(url), 'source': url})
      
 
-    text_splitter = CharacterTextSplitter(chunk_size=1500, separator="\n")
+    text_splitter = CharacterTextSplitter(chunk_size=1000, separator="\n")
 
     docs, metadatas = [], []
     for page in pages:

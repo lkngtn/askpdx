@@ -1,3 +1,4 @@
 scrapes/
+.streamlit/
 docs.pkl
 metadatas.pkl

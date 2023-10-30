@@ -11,7 +11,8 @@ def extract_text_from(url):
     try:
         html = requests.get(url).text
         soup = BeautifulSoup(html, features="html.parser")
-        text = soup.get_text()
+        main_content = soup.find('main')
+        text = main_content.get_text()
 
         lines = (line.strip() for line in text.splitlines())
         return '\n'.join(line for line in lines if line)

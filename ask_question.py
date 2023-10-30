@@ -4,6 +4,10 @@ import pickle
 from langchain.chat_models.openai import ChatOpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 
+from langchain.globals import set_debug
+
+set_debug(True)
+
 parser = argparse.ArgumentParser(description='Ask PDX: Charter, Code, and Policy Q&A')
 parser.add_argument('question', type=str, help='Your question Ask PDX')
 args = parser.parse_args()
